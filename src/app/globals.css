@@ -2,26 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 91%;
+    --foreground: 90 9% 13%;
+    --card: 0 0% 91%;
+    --card-foreground: 90 9% 13%;
+    --popover: 0 0% 91%;
+    --popover-foreground: 90 9% 13%;
+    --primary: 95 68% 46%;
+    --primary-foreground: 90 9% 13%;
+    --secondary: 89 25% 21%;
+    --secondary-foreground: 0 0% 91%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 88 8% 70%;
+
+    --accent: 120 4% 61%;
+    --accent-foreground: 90 9% 13%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 90 9% 13%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 120 4% 40%;
+    --radius: 0.6rem;
+
+    --nutral-dark-700: 120, 1%, 81%;
+    --nutral-dark-700-foreground: 88 8% 70%;
+  }
+
+  .dark {
+    --background: 0 0% 9%;
+    --foreground: 90 9% 87%;
+    --card: 0 0% 9%;
+    --card-foreground: 90 9% 87%;
+    --popover: 120 3% 15%;
+    --popover-foreground: 90 9% 87%;
+    --primary: 95 68% 54%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 89 25% 79%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 80%;
+    --muted-foreground: 90 9% 87%;
+    --accent: 120 4% 39%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 84 10% 10%;
+    --border: 0 0% 60%;
+    --input: 0 0% 80%;
+    --ring: 120 4% 60%;
+
+    --nutral-dark-700: 120 3% 15%;
+    --nutral-dark-700-foreground: 88 8% 70%;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
